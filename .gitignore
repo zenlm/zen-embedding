@@ -6,3 +6,8 @@ GEMINI.md
 GROK.md
 QWEN.md
 evaluation/
+*.safetensors
+*.bin
+*.gguf
+*.pt
+*.pth
