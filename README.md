@@ -218,11 +218,11 @@ documents = [
 ]
 input_texts = queries + documents
 
-tokenizer = AutoTokenizer.from_pretrained('Qwen/Qwen3-Embedding-0.6B', padding_side='left')
-model = AutoModel.from_pretrained('Qwen/Qwen3-Embedding-0.6B')
+tokenizer = AutoTokenizer.from_pretrained('/-Embedding-0.6B', padding_side='left')
+model = AutoModel.from_pretrained('/-Embedding-0.6B')
 
 # We recommend enabling flash_attention_2 for better acceleration and memory saving.
-# model = AutoModel.from_pretrained('Qwen/Qwen3-Embedding-0.6B', attn_implementation="flash_attention_2", torch_dtype=torch.float16).cuda()
+# model = AutoModel.from_pretrained('/-Embedding-0.6B', attn_implementation="flash_attention_2", torch_dtype=torch.float16).cuda
 
 max_length = 8192
 
@@ -668,7 +668,7 @@ For more usage examples, see the code in the [examples]() sections.
 
 ## Training
 
-The code and instructions for training Qwen3-Embedding models can be found in the [training docs](docs/training).
+The code and instructions for training -Embedding models can be found in the [training docs](docs/training).
 
 ## Evaluation
 
@@ -682,14 +682,14 @@ The code for reproducing the following results is available in the [evaluation](
 | GritLM-7B                        |   7B    |     60.92     | 53.74       | 70.53        | 61.83  | 49.75  | 3.45         | 22.77         | 79.94        | 63.78  | 58.31  | 73.33|
 | BGE-M3                           |  0.6B   |     59.56     | 52.18       | 79.11        | 60.35  | 40.88  | -3.11        | 20.1          | 80.76        | 62.79  | 54.60  | 74.12|
 | multilingual-e5-large-instruct   |  0.6B   |     63.22     | 55.08       | 80.13        | 64.94  | 50.75  | -0.40        | 22.91         | 80.86        | 62.61  | 57.12  | 76.81|
-| gte-Qwen2-1.5B-instruct          |  1.5B   |     59.45     | 52.69       | 62.51        | 58.32  | 52.05  | 0.74         | 24.02         | 81.58        | 62.58  | 60.78  | 71.61|
-| gte-Qwen2-7b-Instruct            |   7B    |     62.51     | 55.93       | 73.92        | 61.55  | 52.77  | 4.94         | 25.48         | 85.13        | 65.55  | 60.08  | 73.98|
+| gte--1.5B-instruct | 1.5B | 59.45 | 52.69 | 62.51 | 58.32 | 52.05 | 0.74 | 24.02 | 81.58 | 62.58 | 60.78 | 71.61|
+| gte--7b-Instruct | 7B | 62.51 | 55.93 | 73.92 | 61.55 | 52.77 | 4.94 | 25.48 | 85.13 | 65.55 | 60.08 | 73.98|
 | text-embedding-3-large           |    -    |     58.93     | 51.41       | 62.17        | 60.27  | 46.89  | -2.68        | 22.03         | 79.17        | 63.89  | 59.27  | 71.68|
 | Cohere-embed-multilingual-v3.0   |    -    |     61.12     | 53.23       | 70.50        | 62.95  | 46.89  | -1.89        | 22.74         | 79.88        | 64.07  | 59.16  | 74.80|
 | gemini-embedding-exp-03-07       |    -    |     68.37     | 59.59       | 79.28        | 71.82  | 54.59  | 5.18         | **29.16**     | 83.63        | 65.58  | 67.71  | 79.40|
-| **Qwen3-Embedding-0.6B**         |  0.6B   |     64.33     | 56.00       | 72.22        | 66.83  | 52.33  | 5.09         | 24.59         | 80.83        | 61.41  | 64.64  | 76.17|
-| **Qwen3-Embedding-4B**           |   4B    |     69.45     | 60.86       | 79.36        | 72.33  | 57.15  | **11.56**    | 26.77         | 85.05        | 65.08  | 69.60  | 80.86|
-| **Qwen3-Embedding-8B**           |   8B    |   **70.58**   | **61.69**   | **80.89**    | **74.00** | **57.65** | 10.06      | 28.66         | **86.40**    | **65.63** | **70.88** | **81.08** |
+| **-Embedding-0.6B** | 0.6B | 64.33 | 56.00 | 72.22 | 66.83 | 52.33 | 5.09 | 24.59 | 80.83 | 61.41 | 64.64 | 76.17|
+| **-Embedding-4B** | 4B | 69.45 | 60.86 | 79.36 | 72.33 | 57.15 | **11.56** | 26.77 | 85.05 | 65.08 | 69.60 | 80.86|
+| **-Embedding-8B** | 8B | **70.58** | **61.69** | **80.89** | **74.00** | **57.65** | 10.06 | 28.66 | **86.40** | **65.63** | **70.88** | **81.08** |
 
 > **Note**: For compared models, the scores are retrieved from MTEB online [leaderboard](https://huggingface.co/spaces/mteb/leaderboard) on June 6th, 2025.
 
@@ -700,13 +700,13 @@ The code for reproducing the following results is available in the [evaluation](
 | multilingual-e5-large-instruct |   0.6B   | 65.53      | 61.21      | 75.54  | 49.89  | 86.24       | 48.74   | 53.47  | 84.72 | 29.89 |
 | NV-Embed-v2                    |   7.8B   | 69.81      | 65.00      | 87.19  | 47.66  | 88.69       | 49.61   | 62.84  | 83.82 | 35.21 |
 | GritLM-7B                      |   7.2B   | 67.07      | 63.22      | 81.25  | 50.82  | 87.29       | 49.59   | 54.95  | 83.03 | 35.65 |
-| gte-Qwen2-1.5B-instruct        |   1.5B   | 67.20      | 63.26      | 85.84  | 53.54  | 87.52       | 49.25   | 50.25  | 82.51 | 33.94 |
+| gte--1.5B-instruct | 1.5B | 67.20 | 63.26 | 85.84 | 53.54 | 87.52 | 49.25 | 50.25 | 82.51 | 33.94 |
 | stella_en_1.5B_v5              |   1.5B   | 69.43      | 65.32      | 89.38  | 57.06  | 88.02       | 50.19   | 52.42  | 83.27 | 36.91 |
-| gte-Qwen2-7B-instruct          |   7.6B   | 70.72      | 65.77      | 88.52  | 58.97  | 85.9        | 50.47   | 58.09  | 82.69 | 35.74 |
+| gte--7B-instruct | 7.6B | 70.72 | 65.77 | 88.52 | 58.97 | 85.9 | 50.47 | 58.09 | 82.69 | 35.74 |
 | gemini-embedding-exp-03-07     |    -     | 73.3       | 67.67      | 90.05  | **59.39**  | **87.7**   | 48.59   | 64.35  | 85.29 | **38.28** |
-| **Qwen3-Embedding-0.6B**       |   0.6B   | 70.70      | 64.88      | 85.76  | 54.05  | 84.37       | 48.18   | 61.83  | 86.57 | 33.43 |
-| **Qwen3-Embedding-4B**         |    4B    | 74.60      | 68.10      | 89.84  | 57.51  | 87.01       | 50.76   | 68.46  | **88.72** | 34.39 |
-| **Qwen3-Embedding-8B**         |    8B    | **75.22**  | **68.71**  | **90.43** | 58.57  | 87.52       | **51.56**   | **69.44**  | 88.58 | 34.83 |
+| **-Embedding-0.6B** | 0.6B | 70.70 | 64.88 | 85.76 | 54.05 | 84.37 | 48.18 | 61.83 | 86.57 | 33.43 |
+| **-Embedding-4B** | 4B | 74.60 | 68.10 | 89.84 | 57.51 | 87.01 | 50.76 | 68.46 | **88.72** | 34.39 |
+| **-Embedding-8B** | 8B | **75.22** | **68.71** | **90.43** | 58.57 | 87.52 | **51.56** | **69.44** | 88.58 | 34.83 |
 
 ### C-MTEB (MTEB Chinese)
 
@@ -714,17 +714,17 @@ The code for reproducing the following results is available in the [evaluation](
 |------------------|--------|------------|------------|--------|--------|-------------|---------|-------|-------|
 | multilingual-e5-large-instruct | 0.6B   | 58.08      | 58.24      | 69.80  | 48.23  | 64.52       | 57.45   | 63.65 | 45.81 |
 | bge-multilingual-gemma2 | 9B     | 67.64      |68.52   | 75.31      | 59.30  | 86.67  | 68.28       | 73.73   | 55.19 | 
-| gte-Qwen2-1.5B-instruct  | 1.5B   | 67.12      | 67.79      | 72.53  | 54.61  | 79.5        | 68.21   | 71.86 | 60.05 |
-| gte-Qwen2-7B-instruct    | 7.6B   | 71.62      | 72.19      | 75.77  | 66.06  | 81.16       | 69.24   | 75.70 | 65.20 |
+| gte--1.5B-instruct | 1.5B | 67.12 | 67.79 | 72.53 | 54.61 | 79.5 | 68.21 | 71.86 | 60.05 |
+| gte--7B-instruct | 7.6B | 71.62 | 72.19 | 75.77 | 66.06 | 81.16 | 69.24 | 75.70 | 65.20 |
 | ritrieve_zh_v1          | 0.3B   | 72.71      | 73.85      | 76.88  | 66.5   | **85.98**       | **72.86**   | 76.97 | **63.92** |
-| **Qwen3-Embedding-0.6B** | 0.6B   | 66.33      | 67.45      | 71.40  | 68.74  | 76.42       | 62.58   | 71.03 | 54.52 |
-| **Qwen3-Embedding-4B**   | 4B     | 72.27      | 73.51      | 75.46  | 77.89  | 83.34       | 66.05   | 77.03 | 61.26 |
-| **Qwen3-Embedding-8B**   | 8B     | **73.84**  | **75.00**  | **76.97**  | **80.08**  | 84.23       | 66.99   | **78.21** | 63.53 |
+| **-Embedding-0.6B** | 0.6B | 66.33 | 67.45 | 71.40 | 68.74 | 76.42 | 62.58 | 71.03 | 54.52 |
+| **-Embedding-4B** | 4B | 72.27 | 73.51 | 75.46 | 77.89 | 83.34 | 66.05 | 77.03 | 61.26 |
+| **-Embedding-8B** | 8B | **73.84** | **75.00** | **76.97** | **80.08** | 84.23 | 66.99 | **78.21** | 63.53 |
 
 ### Reranker
 | Model                              | Param  | MTEB-R  | CMTEB-R | MMTEB-R | MLDR   | MTEB-Code | FollowIR |
 |------------------------------------|--------|---------|---------|---------|--------|-----------|----------|
-| **Qwen3-Embedding-0.6B**               | 0.6B   | 61.82   | 71.02   | 64.64   | 50.26  | 75.41     | 5.09     |
+| **-Embedding-0.6B** | 0.6B | 61.82 | 71.02 | 64.64 | 50.26 | 75.41 | 5.09 |
 | Jina-multilingual-reranker-v2-base | 0.3B   | 58.22   | 63.37   | 63.73   | 39.66  | 58.98     | -0.68    |
 | gte-multilingual-reranker-base                      | 0.3B   | 59.51   | 74.08   | 59.44   | 66.33  | 54.18     | -1.64    |
 | BGE-reranker-v2-m3                 | 0.6B   | 57.03   | 72.16   | 58.36   | 59.51  | 41.38     | -0.01    |
